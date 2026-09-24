@@ -1,31 +1,187 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "../index.css";
 
 function Pemba() {
   const navigate = useNavigate();
 
+  const [region, setRegion] = useState("");
+  const [district, setDistrict] = useState("");
+  const [shehia, setShehia] = useState("");
+
+  const regions = {
+    "Pemba North": {
+      districts: {
+        "Micheweni": [
+          "Micheweni",
+          "Shumba",
+          "Kiuyu",
+          "Maziwa Ng'ombe"
+        ],
+        "Wete": [
+          "Wete",
+          "Gando",
+          "Kisiwani",
+          "Mchangamdogo"
+        ]
+      }
+    },
+
+    "Pemba South": {
+      districts: {
+        "Chake Chake": [
+          "Chake Chake",
+          "Mvumoni",
+          "Mgelema",
+          "Vitongoji"
+        ],
+        "Mkoani": [
+          "Mkoani",
+          "Kendwa",
+          "Kengeja",
+          "Michenzani"
+        ]
+      }
+    }
+  };
+
+  const districts =
+    region && regions[region]
+      ? Object.keys(regions[region].districts)
+      : [];
+
+  const shehias =
+    region && district
+      ? regions[region].districts[district]
+      : [];
+
+  const handleRegionChange = (e) => {
+    setRegion(e.target.value);
+    setDistrict("");
+    setShehia("");
+  };
+
+  const handleDistrictChange = (e) => {
+    setDistrict(e.target.value);
+    setShehia("");
+  };
+
   return (
-    <div style={{ padding: "40px 24px", minHeight: "100vh", background: "#f4f8f5" }}>
+    <div className="pemba-page">
+
+      {/* Back button */}
       <button
+        className="back-button"
         onClick={() => navigate("/browse")}
-        style={{
-          marginBottom: "20px",
-          padding: "10px 18px",
-          border: "none",
-          borderRadius: "999px",
-          background: "#075e54",
-          color: "white",
-          cursor: "pointer",
-          fontWeight: 700,
-        }}
       >
         ← Back to Browse
       </button>
 
-      <h1 style={{ color: "#075e54", marginBottom: "8px" }}>Pemba</h1>
-      <p style={{ maxWidth: "700px", lineHeight: 1.7, color: "#334155" }}>
-        This is the Pemba details page. Add districts, shehias, and important local information here.
-      </p>
+      {/* Header */}
+      <div className="pemba-header">
+
+        <h1>Explore Pemba</h1>
+
+        <p>
+          Tafuta na chagua eneo ndani ya Pemba
+          kwa kuchagua Region, District na Shehia.
+        </p>
+      </div>
+
+      {/* Selection Card */}
+      <div className="selection-card">
+
+        <div className="card-title">
+          <h2>Find an Area</h2>
+
+          <p>
+            Chagua taarifa za eneo unalotaka kutafuta.
+          </p>
+        </div>
+
+        {/* Region */}
+        <div className="form-group">
+          <label>Region</label>
+
+          <select
+            value={region}
+            onChange={handleRegionChange}
+          >
+            <option value="">
+              -- Select Region --
+            </option>
+
+            {Object.keys(regions).map((item) => (
+              <option key={item} value={item}>
+                {item}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        {/* District */}
+        <div className="form-group">
+          <label>District</label>
+
+          <select
+            value={district}
+            onChange={handleDistrictChange}
+            disabled={!region}
+          >
+            <option value="">
+              -- Select District --
+            </option>
+
+            {districts.map((item) => (
+              <option key={item} value={item}>
+                {item}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        {/* Shehia */}
+        <div className="form-group">
+          <label>Shehia</label>
+
+          <select
+            value={shehia}
+            onChange={(e) => setShehia(e.target.value)}
+            disabled={!district}
+          >
+            <option value="">
+              -- Select Shehia --
+            </option>
+
+            {shehias.map((item) => (
+              <option key={item} value={item}>
+                {item}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        {/* Result */}
+        {shehia && (
+          <div className="selected-area">
+
+            <span className="success-icon">✓</span>
+
+            <div>
+              <small>Selected Area</small>
+
+              <h3>{shehia}</h3>
+
+              <p>
+                {district} • {region}
+              </p>
+            </div>
+
+          </div>
+        )}
+
+      </div>
+
     </div>
   );
 }

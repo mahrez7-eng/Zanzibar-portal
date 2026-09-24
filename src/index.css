@@ -487,3 +487,492 @@
   padding: 35px;
   color: white;
 }
+* {
+  box-sizing: border-box;
+}
+
+.pemba-page {
+  min-height: 100vh;
+  padding: 35px 6% 60px;
+
+  background-image: url("./assets/blue.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Back button */
+.back-button {
+  border: none;
+  padding: 11px 20px;
+
+  border-radius: 999px;
+
+  background: #075e54;
+  color: white;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.back-button:hover {
+  background: #064b43;
+  transform: translateX(-3px);
+}
+
+/* Header */
+.pemba-header {
+  max-width: 750px;
+
+  margin: 45px auto 35px;
+
+  text-align: center;
+}
+
+.pemba-header span {
+  font-size: 45px;
+}
+
+.pemba-header h1 {
+  margin: 10px 0;
+
+  font-size: clamp(38px, 5vw, 55px);
+
+  font-weight: 800;
+
+  color: #075e54;
+}
+
+.pemba-header p {
+  color: #64748b;
+
+  font-size: 16px;
+
+  line-height: 1.7;
+}
+
+/* Selection card */
+.selection-card {
+  max-width: 850px;
+
+  margin: auto;
+
+  padding: 35px;
+
+  background: white;
+
+  border-radius: 25px;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Card title */
+.card-title {
+  margin-bottom: 30px;
+}
+
+.card-title h2 {
+  margin-bottom: 6px;
+
+  color: #0f172a;
+
+  font-size: 25px;
+}
+
+.card-title p {
+  margin: 0;
+
+  color: #64748b;
+}
+
+/* Form */
+.form-group {
+  margin-bottom: 22px;
+}
+
+.form-group label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #334155;
+
+  font-size: 14px;
+
+  font-weight: 700;
+}
+
+.form-group select {
+  width: 100%;
+
+  padding: 14px 16px;
+
+  border: 1px solid #d1d5db;
+
+  border-radius: 12px;
+
+  background: white;
+
+  color: #0f172a;
+
+  font-size: 15px;
+
+  outline: none;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.form-group select:focus {
+  border-color: #075e54;
+
+  box-shadow:
+    0 0 0 3px rgba(7, 94, 84, 0.1);
+}
+
+.form-group select:disabled {
+  background: #f1f5f9;
+
+  color: #94a3b8;
+
+  cursor: not-allowed;
+}
+
+/* Selected result */
+.selected-area {
+  margin-top: 30px;
+
+  padding: 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  border-radius: 16px;
+
+  background: #ecfdf5;
+
+  border: 1px solid #bbf7d0;
+}
+
+.success-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #075e54;
+
+  color: white;
+
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.selected-area small {
+  color: #64748b;
+
+  font-size: 12px;
+}
+
+.selected-area h3 {
+  margin: 3px 0;
+
+  color: #075e54;
+
+  font-size: 20px;
+}
+
+.selected-area p {
+  margin: 0;
+
+  color: #475569;
+
+  font-size: 14px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+  .pemba-page {
+    padding: 25px 18px 40px;
+  }
+
+  .selection-card {
+    padding: 25px 20px;
+
+    border-radius: 20px;
+  }
+
+  .pemba-header {
+    margin-top: 35px;
+  }
+
+  .pemba-header h1 {
+    font-size: 38px;
+  }
+
+  .selected-area {
+    align-items: flex-start;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+
+.unguja-page {
+  min-height: 100vh;
+
+  padding: 35px 6% 60px;
+
+  background-image: url("./assets/blue.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Back button */
+.back-button {
+  border: none;
+
+  padding: 11px 20px;
+
+  border-radius: 999px;
+
+  background: #075e54;
+
+  color: white;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.back-button:hover {
+  background: #064b43;
+
+  transform: translateX(-3px);
+}
+
+/* Header */
+.unguja-header {
+  max-width: 750px;
+
+  margin: 45px auto 35px;
+
+  text-align: center;
+}
+
+.unguja-header span {
+  font-size: 45px;
+}
+
+.unguja-header h1 {
+  margin: 10px 0;
+
+  font-size: clamp(38px, 5vw, 55px);
+
+  font-weight: 800;
+
+  color: #075e54;
+}
+
+.unguja-header p {
+  color: #64748b;
+
+  font-size: 16px;
+
+  line-height: 1.7;
+}
+
+/* Selection Card */
+.selection-card {
+  max-width: 850px;
+
+  margin: auto;
+
+  padding: 35px;
+
+  background: white;
+
+  border-radius: 25px;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Card title */
+.card-title {
+  margin-bottom: 30px;
+}
+
+.card-title h2 {
+  margin-bottom: 6px;
+
+  color: #0f172a;
+
+  font-size: 25px;
+}
+
+.card-title p {
+  margin: 0;
+
+  color: #64748b;
+}
+
+/* Form */
+.form-group {
+  margin-bottom: 22px;
+}
+
+.form-group label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #334155;
+
+  font-size: 14px;
+
+  font-weight: 700;
+}
+
+.form-group select {
+  width: 100%;
+
+  padding: 14px 16px;
+
+  border: 1px solid #d1d5db;
+
+  border-radius: 12px;
+
+  background: white;
+
+  color: #0f172a;
+
+  font-size: 15px;
+
+  outline: none;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.form-group select:focus {
+  border-color: #075e54;
+
+  box-shadow:
+    0 0 0 3px rgba(7, 94, 84, 0.1);
+}
+
+.form-group select:disabled {
+  background: #f1f5f9;
+
+  color: #94a3b8;
+
+  cursor: not-allowed;
+}
+
+/* Selected area */
+.selected-area {
+  margin-top: 30px;
+
+  padding: 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  border-radius: 16px;
+
+  background: #ecfdf5;
+
+  border: 1px solid #bbf7d0;
+}
+
+.success-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #075e54;
+
+  color: white;
+
+  font-size: 20px;
+
+  font-weight: 800;
+}
+
+.selected-area small {
+  color: #64748b;
+
+  font-size: 12px;
+}
+
+.selected-area h3 {
+  margin: 3px 0;
+
+  color: #075e54;
+
+  font-size: 20px;
+}
+
+.selected-area p {
+  margin: 0;
+
+  color: #475569;
+
+  font-size: 14px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .unguja-page {
+    padding: 25px 18px 40px;
+  }
+
+  .selection-card {
+    padding: 25px 20px;
+
+    border-radius: 20px;
+  }
+
+  .unguja-header {
+    margin-top: 35px;
+  }
+
+  .unguja-header h1 {
+    font-size: 38px;
+  }
+
+  .selected-area {
+    align-items: flex-start;
+  }
+}
