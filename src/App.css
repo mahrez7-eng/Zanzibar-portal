@@ -1,184 +1,193 @@
-.counter {
-  font-size: 16px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  color: var(--accent);
-  background: var(--accent-bg);
-  border: 2px solid transparent;
-  transition: border-color 0.3s;
-  margin-bottom: 24px;
-
-  &:hover {
-    border-color: var(--accent-border);
-  }
-  &:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
-  }
-}
-
-.hero {
-  position: relative;
-
-  .base,
-  .framework,
-  .vite {
-    inset-inline: 0;
-    margin: 0 auto;
-  }
-
-  .base {
-    width: 170px;
-    position: relative;
-    z-index: 0;
-  }
-
-  .framework,
-  .vite {
-    position: absolute;
-  }
-
-  .framework {
-    z-index: 1;
-    top: 34px;
-    height: 28px;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
-      scale(1.4);
-  }
-
-  .vite {
-    z-index: 0;
-    top: 107px;
-    height: 26px;
-    width: auto;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
-      scale(0.8);
-  }
-}
-
-#center {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  place-content: center;
-  place-items: center;
-  flex-grow: 1;
-
-  @media (max-width: 1024px) {
-    padding: 32px 20px 24px;
-    gap: 18px;
-  }
-}
-
-#next-steps {
-  display: flex;
-  border-top: 1px solid var(--border);
-  text-align: left;
-
-  & > div {
-    flex: 1 1 0;
-    padding: 32px;
-    @media (max-width: 1024px) {
-      padding: 24px 20px;
-    }
-  }
-
-  .icon {
-    margin-bottom: 16px;
-    width: 22px;
-    height: 22px;
-  }
-
-  @media (max-width: 1024px) {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
-#docs {
-  border-right: 1px solid var(--border);
-
-  @media (max-width: 1024px) {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
-}
-
-#next-steps ul {
-  list-style: none;
+* {
+  margin: 0;
   padding: 0;
-  display: flex;
-  gap: 8px;
-  margin: 32px 0 0;
-
-  .logo {
-    height: 18px;
-  }
-
-  a {
-    color: var(--text-h);
-    font-size: 16px;
-    border-radius: 6px;
-    background: var(--social-bg);
-    display: flex;
-    padding: 6px 12px;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    transition: box-shadow 0.3s;
-
-    &:hover {
-      box-shadow: var(--shadow);
-    }
-    .button-icon {
-      height: 18px;
-      width: 18px;
-    }
-  }
-
-  @media (max-width: 1024px) {
-    margin-top: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    li {
-      flex: 1 1 calc(50% - 8px);
-    }
-
-    a {
-      width: 100%;
-      justify-content: center;
-      box-sizing: border-box;
-    }
-  }
+  box-sizing: border-box;
 }
 
-#spacer {
-  height: 88px;
-  border-top: 1px solid var(--border);
-  @media (max-width: 1024px) {
-    height: 48px;
-  }
-}
-
-.ticks {
-  position: relative;
+.landing-page {
   width: 100%;
+  min-height: 100vh;
 
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    top: -4.5px;
-    border: 5px solid transparent;
+  background-image: url(./src/assets/greenyellow.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+/* Dark overlay */
+.landing-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.48);
+}
+
+/* Main content */
+.landing-content {
+  position: relative;
+  z-index: 2;
+
+  width: 90%;
+  max-width: 800px;
+
+  text-align: center;
+  color: white;
+
+  animation: fadeIn 1.2s ease;
+}
+/* Main title */
+.landing-content h1 {
+  font-size: clamp(45px, 8vw, 85px);
+  font-weight: 800;
+  letter-spacing: 6px;
+
+  margin-bottom: 10px;
+
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Discover Zanzibar */
+.welcome-text {
+  font-size: 28px;
+  font-weight: 500;
+
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+}
+
+/* Description */
+.description {
+  max-width: 650px;
+
+  margin: 0 auto 25px;
+
+  font-size: 18px;
+  line-height: 1.7;
+
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Unguja / Pemba */
+.location-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+
+  font-size: 60px;
+
+  margin-bottom: 35px;
+}
+
+/* Explore button */
+.explore-btn {
+  border: none;
+
+  padding: 15px 30px;
+
+  background: white;
+  color: #075e54;
+
+  border-radius: 50px;
+
+  font-size: 17px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+
+  transition: all 0.3s ease;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.explore-btn span {
+  font-size: 23px;
+
+  transition: transform 0.3s ease;
+}
+
+.explore-btn:hover {
+  transform: translateY(-4px);
+
+  background: #075e54;
+  color: white;
+}
+
+.explore-btn:hover span {
+  transform: translateX(5px);
+}
+
+/* Bottom information */
+.bottom-text {
+  position: absolute;
+
+  z-index: 2;
+
+  bottom: 25px;
+  left: 0;
+  right: 0;
+
+  text-align: center;
+
+  color: rgba(255, 255, 255, 0.75);
+
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
   }
 
-  &::before {
-    left: 0;
-    border-left-color: var(--border);
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  &::after {
-    right: 0;
-    border-right-color: var(--border);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+  .landing-content h1 {
+    letter-spacing: 3px;
+  }
+
+  .welcome-text {
+    font-size: 21px;
+    letter-spacing: 2px;
+  }
+
+  .description {
+    font-size: 15px;
+    padding: 0 10px;
+  }
+
+  .logo-icon {
+    font-size: 45px;
+  }
+
+  .explore-btn {
+    padding: 13px 25px;
+    font-size: 15px;
+  }
+
+  .bottom-text {
+    font-size: 10px;
+    letter-spacing: 1px;
   }
 }
